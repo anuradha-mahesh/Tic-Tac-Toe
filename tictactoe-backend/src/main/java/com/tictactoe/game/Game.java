@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Game {
     
-    // Board state: "X", "O", or null
+    
     private String[] board = new String[9];
     private String currentPlayer = "X";
     private String winner = null;

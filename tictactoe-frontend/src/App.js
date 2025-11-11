@@ -58,7 +58,9 @@ const App = () => {
   const handleRestart = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/restart`, { method: "POST" });
+      const response = await fetch(`${API_BASE_URL}/restart`, {
+        method: "POST",
+      });
       const data = await response.json();
       setGame(data);
     } catch {
@@ -71,7 +73,11 @@ const App = () => {
   const Square = ({ value, onClick, isWinning }) => {
     const isX = value === "X";
     const content = value ? (
-      isX ? <X className="w-3/4 h-3/4" /> : <Circle className="w-3/4 h-3/4" />
+      isX ? (
+        <X className="w-3/4 h-3/4" />
+      ) : (
+        <Circle className="w-3/4 h-3/4" />
+      )
     ) : null;
 
     return (
@@ -107,7 +113,7 @@ const App = () => {
   return (
     <div className="w-screen h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex flex-col md:flex-row items-center justify-between px-16 py-10">
       {/* Left Section */}
-      <div className="flex flex-col justify-center w-full md:w-1/2 space-y-10 md:pr-12">
+      <div className="flex flex-col justify-center w-full md:w-1/2 space-y-10 md:pr-12 -translate-y-10">
         <h1 className="text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 drop-shadow-sm leading-tight">
           Tic-Tac-Toe
         </h1>
@@ -121,25 +127,26 @@ const App = () => {
         <button
           onClick={handleRestart}
           className="flex items-center justify-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 
-          hover:from-blue-600 hover:to-purple-600 text-white font-semibold text-xl rounded-full 
-          shadow-md transition-transform transform hover:scale-105 w-fit"
+    hover:from-blue-600 hover:to-purple-600 text-white font-semibold text-xl rounded-full 
+    shadow-md transition-transform transform hover:scale-105 w-fit"
         >
           <RefreshCw size={24} />
           <span>Restart Game</span>
         </button>
       </div>
 
-      {/* Right Section - Game Board */}
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center space-y-10">
-        {/* Status text above the board */}
         <div
           className={`px-8 py-4 text-center rounded-lg font-semibold text-2xl shadow-sm transition-all duration-200
-            ${game.winner ? "bg-yellow-100 text-yellow-800" : "bg-blue-50 text-blue-800"}`}
+            ${
+              game.winner
+                ? "bg-yellow-100 text-yellow-800"
+                : "bg-blue-50 text-blue-800"
+            }`}
         >
           {status}
         </div>
 
-        {/* Game Board */}
         <div className="grid grid-cols-3 gap-6 bg-white p-10 rounded-3xl shadow-xl">
           {game.board.map((cell, index) => (
             <Square
