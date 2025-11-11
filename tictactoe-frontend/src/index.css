@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[#0f0f12] text-white flex items-center justify-center min-h-screen;
+  font-family: 'Poppins', sans-serif;
+}
