@@ -1,0 +1,12 @@
+# Node
+frontend/node_modules
+frontend/build
+
+# Java / Maven
+backend/target
+*.class
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
