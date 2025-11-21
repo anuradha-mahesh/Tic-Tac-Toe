@@ -2,8 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { RefreshCw, Circle, X, LogIn, LogOut, User, Cpu, Settings } from "lucide-react";
 
 // In a real application, you'd use environment variables for this
-const API_BASE_URL = "http://localhost:8080";
-
+const API_BASE_URL = "https://tic-tac-toe-eypu.onrender.com";
 const App = () => {
     // --- State Management ---
     const [userX, setUserX] = useState(null); // Player X (Game Initiator)
