@@ -14,7 +14,10 @@ import com.tictactoe.game.Game.GameMode;
 import com.tictactoe.game.User.UserStats;
 
 
-@CrossOrigin(origins = "http://localhost:3000") 
+@CrossOrigin(origins = {
+    "http://localhost:3000",
+    "https://anuradha-mahesh.github.io/Tic-Tac-Toe/"
+})
 @RestController
 @RequestMapping("/api") // Base mapping for all API endpoints
 public class GameController {
