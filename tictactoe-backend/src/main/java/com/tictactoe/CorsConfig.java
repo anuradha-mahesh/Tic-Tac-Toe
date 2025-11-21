@@ -16,7 +16,7 @@ public class CorsConfig {
                 registry.addMapping("/**")
                         .allowedOrigins(
                             "http://localhost:3000",
-                            "https://anuradha-mahesh.github.io/Tic-Tac-Toe/"
+                            "https://anuradha-mahesh.github.io"
                         )
                         .allowedMethods("*")
                         .allowedHeaders("*");
